@@ -88,3 +88,18 @@
 <%- partial('_plugins/mermaid') %>
 <%- partial('_plugins/fancybox') %>
 <%- partial('_plugins/tocbot') %>
+<script>
+  function checkLogoTheme() {
+    const isDark = document.documentElement.classList.contains("dark");
+    const titleLogo = document.getElementById("title_logo");
+    const headerLogo = document.getElementById("logo");
+    if (isDark) {
+      if (titleLogo) titleLogo.setAttribute("src", "<%- theme.title_logo + '-white.svg' %>");
+      if (headerLogo) headerLogo.setAttribute("src", "<%- theme.logo + '-white.svg' %>");
+    } else {
+      if (titleLogo) titleLogo.setAttribute("src", "<%- theme.title_logo + '-black.svg' %>");
+      if (headerLogo) headerLogo.setAttribute("src", "<%- theme.logo + '-black.svg' %>");
+    }
+  }
+  window.addEventListener("load", checkLogoTheme);
+</script>

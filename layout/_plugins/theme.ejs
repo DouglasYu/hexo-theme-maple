@@ -35,16 +35,30 @@
       }
     }
 
+    // TODO: since there is no Cusdis on the index page, do we really need this?
     function checkCusdisTheme() {
-      const isDark = document.documentElement.classList.contains("dark");
-      if (isDark) {
-        window.CUSDIS.setTheme('dark');
-      } else {
-        window.CUSDIS.setTheme('light');
+      if (window.CUSDIS) {
+        const isDark = document.documentElement.classList.contains("dark");
+        if (isDark) {
+          window.CUSDIS.setTheme('dark');
+        } else {
+          window.CUSDIS.setTheme('light');
+        }
       }
     }
     
-
+    function checkLogoTheme() {
+      const isDark = document.documentElement.classList.contains("dark");
+      const titleLogo = document.getElementById("title_logo");
+      const headerLogo = document.getElementById("logo");
+      if (isDark) {
+        if (titleLogo) titleLogo.setAttribute("src", "<%- theme.title_logo + '-white.svg' %>");
+        if (headerLogo) headerLogo.setAttribute("src", "<%- theme.logo + '-white.svg' %>");
+      } else {
+        if (titleLogo) titleLogo.setAttribute("src", "<%- theme.title_logo + '-black.svg' %>");
+        if (headerLogo) headerLogo.setAttribute("src", "<%- theme.logo + '-black.svg' %>");
+      }
+    }
 
     // toggle dark mode
     function toggleDark() {
@@ -59,9 +73,11 @@
         localStorage.setItem("hexo-color-scheme", isDark ? "dark" : "light");
       }
       toggleGiscusTheme();
+      checkLogoTheme();
       checkCusdisTheme();
     }
     $("#toggle-dark").click(toggleDark);
+    checkLogoTheme(); // Set the theme for logos when first entering the index page
 
     // listen dark mode change
     window
@@ -75,6 +91,7 @@
             e.matches ? "ri:moon-line" : "ri:sun-line"
           );
           toggleGiscusTheme();
+          checkLogoTheme();
           checkCusdisTheme();
         }
       });

@@ -7,8 +7,9 @@ nav:
 # favicon
 favicon: /favicon.ico
 
-# logo
-logo: /img/logo.svg
+# logo. You should provide a dark and a light version for the image, e.g. fish-white.svg, fish-black.svg
+logo: /img/fish-bone
+title_logo: /img/torpedo-missile
 
 # links
 links:

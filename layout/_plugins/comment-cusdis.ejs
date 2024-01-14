@@ -8,7 +8,7 @@
 ></div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 <script>
-     window.onload = function () {
+     function checkCusdisTheme() {
           const isDark = document.documentElement.classList.contains("dark");
           if (isDark) {
                window.CUSDIS.setTheme('dark');
@@ -16,4 +16,5 @@
                window.CUSDIS.setTheme('light');
           }
      }
+     window.addEventListener("load", checkCusdisTheme);
 </script>
