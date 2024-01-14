@@ -1,10 +1,13 @@
 @import 'highlight.styl'
+@import 'universal.styl'
 
+// $color-theme-main = #de7441
 
 :root {
   --c-bg: #ffffff
   --c-scrollbar: #d9d9d9
   --c-scrollbar-hover: #bbbbbb
+  --color-theme-main: #de7441
 }
 
 html.dark
@@ -38,6 +41,14 @@ a:hover
   background-image: url(../img/logo.svg);
   background-size: cover;
   will-change: transform;
+
+
+.my-typographic
+  a
+    color var(--color-theme-main)
+    box-shadow-transition()
+    &:hover
+      box-shadow-transition-hover()
 
 
 @keyframes fall

@@ -1,0 +1,19 @@
+<div id="cusdis_thread"
+     data-host="https://cusdis.com"
+     data-app-id="<%= theme.cusdis.app_id %>"
+     data-page-id="<%= page.path %>"
+     data-page-url="<%= page.permalink %>"
+     data-page-title="<%= page.title %>"
+     data-theme="auto"
+></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+     window.onload = function () {
+          const isDark = document.documentElement.classList.contains("dark");
+          if (isDark) {
+               window.CUSDIS.setTheme('dark');
+          } else {
+               window.CUSDIS.setTheme('light');
+          }
+     }
+</script>

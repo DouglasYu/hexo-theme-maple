@@ -2,17 +2,17 @@
 nav:
   Posts: /archives
   # Categories: /category
-  # Tags: /tag
+  # Tags: /tags
 
 # favicon
-favicon: /favicon.png
+favicon: /favicon.ico
 
 # logo
-logo: /images/logo.svg
+logo: /img/logo.svg
 
 # links
 links:
-  Github: https://github.com/xbmlz
+  Github: https://github.com/douglasyu
   # ZhiHu:
   # Twitter:
   # Weibo:
@@ -41,12 +41,16 @@ mermaid:
 
 # giscus
 giscus:
-  enable:
+  enable: false
   repo:
   repo_id:
   category:
   category_id:
   mapping:
+
+# comment-cusdis
+cusdis:
+  app_id: b1abaae5-e037-4ce7-b3ae-b7196fa8f235
 
 # maple
 maple:
